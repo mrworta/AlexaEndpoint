@@ -52,21 +52,12 @@ function msgAlexa($msg) {
 function smartAlexa($alexa) {
   $response = new \Alexa\Response\Response;
 
-  $command = $alexa->slots['command'];
-  $room = $alexa->slots['room'];
-
-  if ($alexa->sessionData->intentSequence != "") {
-	// If we're in a chat sequence, get Intent from sequqence variable
-	$intent = $alexa->sessionData->intentSequence;
-  } else
-  {
-	$intent = $alexa->intentName;
-  }
-
+  $command = $alexa->slots['command'];  
+  $intent = $alexa->intentName;  
   $handled = false;
 
   switch ($intent) {
-    case "": $response->respond("Ei Kapitän, Licht ".$command." im ".$room);
+    case "SwitchModule": $response->respond("Ja. ".$device." ist ".$command);
   			 $response->endSession();
 		break;
 
