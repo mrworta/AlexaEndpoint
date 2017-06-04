@@ -90,7 +90,8 @@ function RequestLog($object) {
 }
 
 
-$alexa = getAlexa(); if (!$alexa->user->accessToken) { msgAlexa("Für diesen Skill wird eine Accountverbindung benötigt."); return "erf"; }
+// $alexa = getAlexa(); if (!$alexa->user->accessToken) { msgAlexa("Für diesen Skill wird eine Accountverbindung benötigt."); return "erf"; }
+$alexa = getAlexa(); 
 RequestLog($alexa);
 
 smartAlexa($alexa);
