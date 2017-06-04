@@ -158,7 +158,7 @@ class RPC_Symcon {
 
     public function __construct() {
         $this->connection = new AMQPStreamConnection(
-            'docker-prod.srv.nightserv.de', 5672, 'fred', 'nasen4hasen', 'nightserv');
+            'docker-prod.srv.nightserv.de', 5672, 'fred', 'password', 'nightserv');
         $this->channel = $this->connection->channel();
         list($this->callback_queue, ,) = $this->channel->queue_declare(
             "", false, false, true, false);
